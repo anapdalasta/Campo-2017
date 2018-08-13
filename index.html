@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>Campo 2017</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+		<link rel="stylesheet" href="./publish.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<nav class="navbar navbar-fixed-top navbar-light" style="background-color: #1ea789;" role="navigation">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand custom-font-app-title" style="color: white;">Campo 2017</a>
+					</div>
+					
+				</div>
+			</nav>
+		</div>
+		<div class="navbar-offset"></div>
+		<div id="map-canvas">
+			<div id="map"></div>
+		</div>
+		<div class="row main-row">
+			<div class="col-sm-4 col-md-2 sidebar sidebar-left pull-left">
+				<div class="panel-group sidebar-body" id="accordion-left">
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header" >
+							<h4 class="panel-title custom-font-subtitle">
+                                <i class="fa fa-list-alt"></i><a id="layers-title" data-toggle="collapse" href="#layers"> Layers</a>
+								<span class="pull-right slide-submenu"><i class="fa fa-chevron-left"></i></span>
+							</h4>
+						</div>
+						<div id="layers" class="panel-collapse collapse in overflow-y">
+								<div class="panel-body list-group padding-body">
+										<label>
+											<input name="points" type="checkbox">
+											<a id="points" href="javascript:void(0);"> Points </a>
+										</label>
+								</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="description-title" data-toggle="collapse" href="#properties"> Description</a>
+							</h4>
+						</div>
+						<div id="properties" class="panel-collapse collapse overflow-y">
+							<div class="panel-body padding-body">
+								<p class="custom-font-body" id="layer-description"></p>
+								<button id="more" type="button" class="btn btn-default custom-font-more" style="display:none;">
+									More
+								</button>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading padding-header">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-list-alt"></i><a id="legend-title" data-toggle="collapse" href="#legends"> Legend</a>
+							</h4>
+						</div>
+						<div id="legends" class="panel-collapse collapse overflow-y">
+							<div id="legend" class="panel-body padding-body custom-font-legend"></div>
+						</div>
+					</div>
+					<div id="panel-download" class="panel panel-default">
+						<div class="panel-heading padding-header" style="height: 29px;">
+							<h4 class="panel-title custom-font-subtitle">
+								<i class="fa fa-download"></i><a id="download-title"> Download</a>
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mini-submenu mini-submenu-left pull-left">
+			<i class="fa fa-list-alt"></i>
+		</div>
+		<img id="loader" src="./default.gif" hidden="hidden"/>
+		<div id="loader-message"><h4 id="loader-message-text"></h4></div>
+		<footer class="navbar-default navbar-fixed-bottom">
+			<div id="footer" class="container-fluid">
+				<p>Powered by package <a href="https://github.com/TerraME/publish" target="_blank">publish</a> of <a href="http://www.terrame.org" target="_blank">TerraME</a>.</p>
+			</div>
+		</footer>
+		<div class="modal fade" id="modal-app-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle">Campo 2017</h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body">   <table style="width:100%"><tr>
+    <td style="width: 100%">Esta aplicação apresenta os principais resultados da expedição de campo realizada em 2017 pelos pesquisadores do grupo LiSS (Laboratório de investigação em Sistemas Sócio-Ambientais) associado ao INPE.
+   Essa expedição de campo ocorreu no período de 24/09 a 06/07 de 2017 nas porções sudoeste do estado do Pará (Trajeto 1) e norte do estado do Mato Grosso (Trajeto 2). Os principais objetivos foram a coleta de informações referentes aos diferentes padrões de cobertura da terra, mais especificamente quanto às dinâmicas das populações e das áreas urbanizadas na Amazônia Paraense; e quanto às dinâmicas de uso da terra - estudando a importância da agricultura, pecuária e extração de seletiva para o desenvolvimento regional, bem como, obter informações sobre a utilização de mão de obra, máquinas e equipamentos e aspectos relativos à produção e a sua comercialização.<p><p> <b>Equipe:</b><br> Maria Isabel Sobral Escada, Silvana Amaral, Adriana Affonso, Afonso Oliveira, Ana Paula Dal'Asta, Anielli de Souza, Danilo Avancini Rodrigies, Gabriel Crivellaro, Lidiane Costa, Mateus Macul, Vinicius Capanema </td>
+    <tr>
+
+<tr>
+<table style="width:100%"><tr>
+<td style="width: 100%" align="left"> <p><p> <b>Apoio</b><br> <img src="Apoio2.png"/></td>
+</tr></table>
+   </p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto1" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto1"> Ponto1</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto1">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto1.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto2" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto2"> Ponto2</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto2">
+						<p class="custom-font-body"> Pasto Limpo </p>
+						
+						<img class="report-img" src="Ponto2.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto3" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto3"> Ponto3</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto3">
+						<p class="custom-font-body"> Pasto Sujo </p>
+						
+						<img class="report-img" src="Ponto3.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto4" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto4"> Ponto4</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto4">
+						<p class="custom-font-body"> Pasto Limpo </p>
+						
+						<img class="report-img" src="Ponto4.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto5" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto5"> Ponto5</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto5">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto5.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto6" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto6"> Ponto6</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto6">
+						<p class="custom-font-body"> Agricultura Anual </p>
+						
+						<img class="report-img" src="Ponto6.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto7" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto7"> Ponto7</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto7">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto7.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto8" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto8"> Ponto8</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto8">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto8.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto9" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto9"> Ponto9</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto9">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto9.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto10" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto10"> Ponto10</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto10">
+						<p class="custom-font-body"> Pasto Sujo </p>
+						
+						<img class="report-img" src="Ponto10.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto11" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto11"> Ponto11</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto11">
+						<p class="custom-font-body"> Pasto Limpo </p>
+						
+						<img class="report-img" src="Ponto11.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto12" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto12"> Ponto12</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto12">
+						<p class="custom-font-body"> Pasto Sujo </p>
+						
+						<img class="report-img" src="Ponto12.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto13" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto13"> Ponto13</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto13">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto13.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto14" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto14"> Ponto14</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto14">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto14.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto15" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto15"> Ponto15</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto15">
+						<p class="custom-font-body"> Agricultura Anual </p>
+						
+						<img class="report-img" src="Ponto15.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto16" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto16"> Ponto16</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto16">
+						<p class="custom-font-body"> Pasto Sujo </p>
+						
+						<img class="report-img" src="Ponto16.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto17" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto17"> Ponto17</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto17">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto17.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto18" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto18"> Ponto18</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto18">
+						<p class="custom-font-body"> Pasto Limpo </p>
+						
+						<img class="report-img" src="Ponto18.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto19" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto19"> Ponto19</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto19">
+						<p class="custom-font-body"> Vegetacao Secundaria </p>
+						
+						<img class="report-img" src="Ponto19.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto20" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto20"> Ponto20</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto20">
+						<p class="custom-font-body"> Agricultura Familiar </p>
+						
+						<img class="report-img" src="Ponto20.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto21" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto21"> Ponto21</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto21">
+						<p class="custom-font-body"> Agricultura Familiar </p>
+						
+						<img class="report-img" src="Ponto21.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto22" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto22"> Ponto22</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto22">
+						<p class="custom-font-body"> Pasto Sujo </p>
+						
+						<img class="report-img" src="Ponto22.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto23" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto23"> Ponto23</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto23">
+						<p class="custom-font-body"> Agricultura Anual </p>
+						
+						<img class="report-img" src="Ponto23.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto24" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto24"> Ponto24</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto24">
+						<p class="custom-font-body"> Pasto Limpo </p>
+						
+						<img class="report-img" src="Ponto24.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto25" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto25"> Ponto25</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto25">
+						<p class="custom-font-body"> Sitiantes </p>
+						
+						<img class="report-img" src="Ponto25.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto26" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto26"> Ponto26</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto26">
+						<p class="custom-font-body"> Sitiantes </p>
+						
+						<img class="report-img" src="Ponto26.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto27" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto27"> Ponto27</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto27">
+						<p class="custom-font-body"> Expansao urbana e sitiantes </p>
+						
+						<img class="report-img" src="Ponto27.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto28" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto28"> Ponto28</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto28">
+						<p class="custom-font-body"> Lixo </p>
+						
+						<img class="report-img" src="Ponto28.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto29" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto29"> Ponto29</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto29">
+						<p class="custom-font-body"> Loteamento (tracado definido) </p>
+						
+						<img class="report-img" src="Ponto29.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto30" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto30"> Ponto30</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto30">
+						<p class="custom-font-body"> Loteamento (tracado definido) </p>
+						
+						<img class="report-img" src="Ponto30.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto31" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto31"> Ponto31</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto31">
+						<p class="custom-font-body"> Loteamento </p>
+						
+						<img class="report-img" src="Ponto31.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto32" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto32"> Ponto32</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto32">
+						<p class="custom-font-body"> Loteamento </p>
+						
+						<img class="report-img" src="Ponto32.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto33" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto33"> Ponto33</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto33">
+						<p class="custom-font-body"> Expansao urbana </p>
+						
+						<img class="report-img" src="Ponto33.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto34" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto34"> Ponto34</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto34">
+						<p class="custom-font-body"> Cemiterio </p>
+						
+						<img class="report-img" src="Ponto34.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto35" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto35"> Ponto35</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto35">
+						<p class="custom-font-body"> Loteamento urbano </p>
+						
+						<img class="report-img" src="Ponto35.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto36" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto36"> Ponto36</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto36">
+						<p class="custom-font-body"> Loteamento urbano (plantacao de mandioca no interior) </p>
+						
+						<img class="report-img" src="Ponto36.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto37" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto37"> Ponto37</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto37">
+						<p class="custom-font-body"> Loteamento urbano </p>
+						
+						<img class="report-img" src="Ponto37.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto38" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto38"> Ponto38</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto38">
+						<p class="custom-font-body"> Expansao ocupacao urbana </p>
+						
+						<img class="report-img" src="Ponto38.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto39" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto39"> Ponto39</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto39">
+						<p class="custom-font-body"> Loteamento (tracado definidi) </p>
+						
+						<img class="report-img" src="Ponto39.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto40" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto40"> Ponto40</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto40">
+						<p class="custom-font-body"> Loteamento outros </p>
+						
+						<img class="report-img" src="Ponto40.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto41" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto41"> Ponto41</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto41">
+						<p class="custom-font-body"> Floresta degradada </p>
+						
+						<img class="report-img" src="Ponto41.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto42" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto42"> Ponto42</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto42">
+						<p class="custom-font-body"> Corte raso com fogo/sem cobertura </p>
+						
+						<img class="report-img" src="Ponto42.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto43" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto43"> Ponto43</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto43">
+						<p class="custom-font-body"> Pasto limpo </p>
+						
+						<img class="report-img" src="Ponto43.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto44" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto44"> Ponto44</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto44">
+						<p class="custom-font-body"> Pista de pouso </p>
+						
+						<img class="report-img" src="Ponto44.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto45" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto45"> Ponto45</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto45">
+						<p class="custom-font-body"> Floresta degradada </p>
+						
+						<img class="report-img" src="Ponto45.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto46" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto46"> Ponto46</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto46">
+						<p class="custom-font-body"> Pasto sujo </p>
+						
+						<img class="report-img" src="Ponto46.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto47" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto47"> Ponto47</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto47">
+						<p class="custom-font-body"> Pasto limpo </p>
+						
+						<img class="report-img" src="Ponto47.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto48" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto48"> Ponto48</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto48">
+						<p class="custom-font-body"> Area degradada </p>
+						
+						<img class="report-img" src="Ponto48.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto49" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto49"> Ponto49</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto49">
+						<p class="custom-font-body"> Extracao de rocha </p>
+						
+						<img class="report-img" src="Ponto49.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto50" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto50"> Ponto50</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto50">
+						<p class="custom-font-body"> sede de fazenda </p>
+						
+						<img class="report-img" src="Ponto50.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto51" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto51"> Ponto51</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto51">
+						<p class="custom-font-body"> Floresta degradada </p>
+						
+						<img class="report-img" src="Ponto51.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto52" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto52"> Ponto52</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto52">
+						<p class="custom-font-body"> Agricultura familiar </p>
+						
+						<img class="report-img" src="Ponto52.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto53" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto53"> Ponto53</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto53">
+						<p class="custom-font-body"> Pasto </p>
+						
+						<img class="report-img" src="Ponto53.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto54" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto54"> Ponto54</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto54">
+						<p class="custom-font-body"> Pasto no sub-bosque com gado e afloramento rochoso </p>
+						
+						<img class="report-img" src="Ponto54.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto55" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto55"> Ponto55</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto55">
+						<p class="custom-font-body"> Afloramento no interior de assentamento </p>
+						
+						<img class="report-img" src="Ponto55.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto56" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto56"> Ponto56</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto56">
+						<p class="custom-font-body"> Floresta muito degradada </p>
+						
+						<img class="report-img" src="Ponto56.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto57" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto57"> Ponto57</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto57">
+						<p class="custom-font-body"> Corte raso com pastagem </p>
+						
+						<img class="report-img" src="Ponto57.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto58" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto58"> Ponto58</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto58">
+						<p class="custom-font-body"> Casa abondonada no interior da FLONA </p>
+						
+						<img class="report-img" src="Ponto58.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto59" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto59"> Ponto59</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto59">
+						<p class="custom-font-body"> Plano de manejo florestal SINOPEMA </p>
+						
+						<img class="report-img" src="Ponto59.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto60" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto60"> Ponto60</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto60">
+						<p class="custom-font-body"> Plano de manejo florestal </p>
+						
+						<img class="report-img" src="Ponto60.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto61" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto61"> Ponto61</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto61">
+						<p class="custom-font-body"> Loteamento </p>
+						
+						<img class="report-img" src="Ponto61.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto62" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto62"> Ponto62</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto62">
+						<p class="custom-font-body"> Expansao urbana </p>
+						
+						<img class="report-img" src="Ponto62.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto63" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto63"> Ponto63</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto63">
+						<p class="custom-font-body"> Sitiantes </p>
+						
+						<img class="report-img" src="Ponto63.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto64" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto64"> Ponto64</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto64">
+						<p class="custom-font-body"> loteamento </p>
+						
+						<img class="report-img" src="Ponto64.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto65" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto65"> Ponto65</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto65">
+						<p class="custom-font-body"> Expansao urbana </p>
+						
+						<img class="report-img" src="Ponto65.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto66" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto66"> Ponto66</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto66">
+						<p class="custom-font-body"> Ocupacao espontanea </p>
+						
+						<img class="report-img" src="Ponto66.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto67" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto67"> Ponto67</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto67">
+						<p class="custom-font-body"> Expansao urbana </p>
+						
+						<img class="report-img" src="Ponto67.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto68" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto68"> Ponto68</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto68">
+						<p class="custom-font-body"> Conjunto habitacional PMCMV </p>
+						
+						<img class="report-img" src="Ponto68.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto69" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto69"> Ponto69</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto69">
+						<p class="custom-font-body"> Loteamento urbano </p>
+						
+						<img class="report-img" src="Ponto69.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto70" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto70"> Ponto70</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto70">
+						<p class="custom-font-body"> Conjunto habitacional </p>
+						
+						<img class="report-img" src="Ponto70.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto71" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto71"> Ponto71</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto71">
+						<p class="custom-font-body"> Ocupacao espontanea </p>
+						
+						<img class="report-img" src="Ponto71.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto72" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto72"> Ponto72</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto72">
+						<p class="custom-font-body"> Loteamento urbano </p>
+						
+						<img class="report-img" src="Ponto72.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto73" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto73"> Ponto73</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto73">
+						<p class="custom-font-body"> Comunidade </p>
+						
+						<img class="report-img" src="Ponto73.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto74" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto74"> Ponto74</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto74">
+						<p class="custom-font-body"> Comunidade </p>
+						
+						<img class="report-img" src="Ponto74.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto75" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto75"> Ponto75</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto75">
+						<p class="custom-font-body"> Expansao urbana espontanea </p>
+						
+						<img class="report-img" src="Ponto75.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto76" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto76"> Ponto76</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto76">
+						<p class="custom-font-body"> Expansao urbana espontanea </p>
+						
+						<img class="report-img" src="Ponto76.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto77" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto77"> Ponto77</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto77">
+						<p class="custom-font-body"> Comunidade </p>
+						
+						<img class="report-img" src="Ponto77.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto78" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto78"> Ponto78</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto78">
+						<p class="custom-font-body"> Comunidade </p>
+						
+						<img class="report-img" src="Ponto78.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto79" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto79"> Ponto79</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto79">
+						<p class="custom-font-body"> Loteamento urbano </p>
+						
+						<img class="report-img" src="Ponto79.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto80" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto80"> Ponto80</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto80">
+						<p class="custom-font-body"> Loteamento urbano </p>
+						
+						<img class="report-img" src="Ponto80.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-report-pointsPonto81" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h2 class="modal-title custom-font-report-title" id="modal-report-label-pointsPonto81"> Ponto81</h2>
+						<p class="text-muted custom-font-body">LiSS (2017)</p>
+					</div>
+					<div class="modal-body" id="modal-report-text-pointsPonto81">
+						<p class="custom-font-body"> Condominio fechado </p>
+						
+						<img class="report-img" src="Ponto81.JPG"/>
+						<br/>
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade" id="modal-completed-description" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title custom-font-subtitle" id="modal-title-description"></h4>
+					</div>
+					<div class="modal-body">
+						<p class="custom-font-body" id="info-description"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-info" data-dismiss="modal">Ok</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+		<script type="text/javascript" src="./jquery-1.9.1.min.js"></script>
+		
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<script type="text/javascript" src="./config.js"></script>
+		<script type="text/javascript" src="./publish.min.js"></script>
+	</body>
+</html>
+
